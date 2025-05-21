@@ -1,57 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shovan Dhara</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Shovan Dhara</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hey, it's me! Shovan Dhara!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Knewave"
+      rel="stylesheet"
+    />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-123012336-1");
+    </script>
+    <style>
+      body {
+        display: none;
+      }
+      .first-name {
+        padding-right: 5rem;
+      }
+      .intro-blurb-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+        transition: all 0.3s ease-in-out;
+      }
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+      .intro-blurb-title:hover {
+        color: #24BBCC;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big-ol-fist__intro" style="z-index: 1"></div>
+    <div class="intro">
+      <div
+        class="name"
+        title="Thanks for vibin' and keepin' it tight. If you need me, I'm on my mobile."
+      >
+        <div class="baffling first-name">Hi</div>
+        <div class="baffling first-name">It's</div>
+        <div class="baffling last-name">SHOVAN</div>
+      </div>
+      <br />
+      <div class="contact" style="z-index: 2">
+        <a href="https://github.com/shovanDhara">
+          <img class="svg-icon" src="gh-icon.svg" />
+          <span class="baffling">shovanDhara</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shovan-dhara/">
+          <img class="svg-icon" src="linkedin-icon.svg" />
+          <span class="baffling">Shovan Dhara</span>
+        </a>
+        <a href="mailto:shovan.9836@gmail.com">
+          <img class="svg-icon" src="email-icon.svg" />
+          <span class="baffling">shovan.9836@gmail.com</span>
+        </a>
+        <a href="resume.pdf" target="_blank">
+          <img class="svg-icon" src="dl-icon.svg" />
+          <span class="baffling">Resume DL</span>
+        </a>
+      </div>
+      <div class="intro-blurb">
+        <section class="intro-blurb-title">
+          “If I had an hour to solve a problem and my life depended on the
+          solution, I would spend the first 55 minutes determining the proper
+          question to ask, for once I know the proper question, I could solve
+          the problem in less than five minutes.” — Albert Einstein, Theoretical
+          Physicist.
+        </section>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center">Shovan Dhara</h1>
-                <p class="text-center">
-                    <i class="fas fa-map-marker-alt"></i> Bangalore, India
-                </p>
-                <p class="text-center">
-                    <i class="fas fa-envelope"></i> shovan.dhara@gmail.com
-                </p>
-                <p class="text-center">
-                    <i class="fas fa-phone"></i> +91 9876543210
-                </p>
-            </div>
-        </div>
+        Front End Developer with 12 years of experience specializing in scalable
+        UI architecture and building performant, intuitive web applications. I
+        design and implement modular SPAs using React, Angular, and TypeScript,
+        with a strong focus on usability, accessibility, and developer
+        efficiency. Skilled in integrating modern tooling like Webpack, NPM, and
+        CI/CD, I streamline workflows and maintain clean, maintainable
+        codebases. Passionate about UX, I prototype and deliver innovative
+        solutions, staying current with emerging technologies. I thrive in agile
+        environments, enjoy solving complex UI problems, and actively
+        participate in hackathons to push creative and technical boundaries.
+      </div>
     </div>
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <div class="content">
+      <section class="things-i-bring-section">
+        <h1 class="baffling">Here are a few of the things I bring</h1>
+        <div class="things-i-bring-grid">
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="love-art.png" /></div>
+            <h2 class="thing-i-bring-title">
+              Your Frontend Ally and DOM Diplomat
+            </h2>
+            <p class="thing-i-bring-blurb">
+              Bridging design and development, I champion frontend excellence
+              with a deep understanding of the DOM and user experience.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="modernjs-art.png" /></div>
+            <h2 class="thing-i-bring-title">JavaScript, TypeScript & Beyond</h2>
+            <p class="thing-i-bring-blurb">
+              Always exploring the cutting edge—modern JavaScript, TypeScript,
+              powerful frameworks, and robust tooling are my daily tools of
+              choice.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="cleanui-art.png" /></div>
+            <h2 class="thing-i-bring-title">Built on Best Practices</h2>
+            <p class="thing-i-bring-blurb">
+              I don’t just build—I document, refine, and scale using proven
+              architectural patterns and frontend principles.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art">
+              <img src="ideatoimpl-art.png" />
+            </div>
+            <h2 class="thing-i-bring-title">End-to-End Ownership</h2>
+            <p class="thing-i-bring-blurb">
+              From behavior-driven UX to system planning, from code
+              implementation to seamless delivery—I loop back, always improving.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art">
+              <img src="initiative-art.png" />
+            </div>
+            <h2 class="thing-i-bring-title">UI Obsessed, Problem Focused</h2>
+            <p class="thing-i-bring-blurb">
+              A passion for clean, functional UI pushes me to identify pain
+              points, take ownership, and deliver elegant solutions.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="crossteam-art.png" /></div>
+            <h2 class="thing-i-bring-title">No Great Idea Left Behind</h2>
+            <p class="thing-i-bring-blurb">
+              I believe even unconventional ideas deserve a shot—let’s elevate
+              the overlooked into the extraordinary.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="some-skills-section">
+        <h1 class="baffling">These are *some* of my skills</h1>
+        <div class="some-skills">
+          <div class="some-skills-column">
+            <div class="some-skills-block">
+              <h2 class="some-skills-block-title">Technical</h2>
+              <ul class="some-skills-block-list">
+                <li>Modern JavaScript, Typescript, CSS, and HTML</li>
+                <li>Web Browser APIs, dev tools, and perf profiling</li>
+                <li>
+                  Component-based, state-driven, declarative UI frameworks (
+                  React, NEXT Js, React Query, Redux, Single SPA)
+                </li>
+                <li>Webpack, babel, eslint</li>
+                <li>Testing Tools - Cypress, Jest, React Testing Library</li>
+                <li>Architecture – Monolithic, Micro Front-End</li>
+                <li>
+                  Schematics - Angular Schematics (Built tools to simplify and
+                  enhance the developer experience)
+                </li>
+                <li>NoSql DB – Mongo DB, GraphQL</li>
+                <li>
+                  Security Integration - Sub-resource Integrity, Content
+                  Security Policy in CloudFront CDN
+                </li>
+                <li>
+                  Infra – AWS S3, CloudFront, Helm Chart, Makefile, Jenkins,
+                  Nginx Config and Debugging, K8s, Docker
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="some-skills-column">
+            <img src="skills-art-placeholder.png" />
+          </div>
+          <div class="some-skills-column">
+            <div class="some-skills-block">
+              <h2 class="some-skills-block-title">
+                Planning and Collaboration
+              </h2>
+              <ul class="some-skills-block-list">
+                <li>Collaboration across product, design, and engineering</li>
+                <li>User-centered design thinking</li>
+                <li>Planning for incremental delivery (Agile/Scrum)</li>
+                <li>Rapid prototyping and communication with wireframes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="projects-section">
+        <h1 class="baffling">Take a look at select projects</h1>
+        <div class="projects-content"></div>
+      </section> -->
+
+      <section class="experience-section">
+        <h1 class="baffling">This is my work experience</h1>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Josys</div>
+            <br />
+            <div class="experience-block-place-role">UI Tech Lead</div>
+            <div class="experience-block-place-time">Dec 2022 - Present</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Product Enhancement Leadership: Led a talented team in
+              transforming user experiences and improving product performance at
+              Josys by driving forward-thinking UI/UX enhancements.
+            </li>
+            <li>
+              UI Development Mastery: Leveraged React.js proficiency to craft
+              innovative UI libraries and Design Systems, accelerating component
+              development and ensuring consistent, scalable interfaces across
+              our products.
+            </li>
+            <li>
+              Code Optimization & Innovation: Spearheaded code optimizations,
+              Micro Frontend integration, and i18n strategies, instrumental in
+              successful global product launches and bolstering our technical
+              foundation.
+            </li>
+            <li>
+              Efficiency & Automation: Implemented automation in the release
+              process, streamlining operations for faster iterations and
+              impeccable product deliveries, contributing directly to increased
+              operational efficiency.
+            </li>
+            <li>
+              Measurable Impact: These efforts directly correlated with tangible
+              outcomes, significantly elevating product sales and reinforcing
+              our position in the market, fostering company growth.
+            </li>
+            <li>
+              Daily involvement with a whole host of AWS services like
+              CloudFront, S3, ECS, ECR, EC2, Route53, Cloudwatch, and many
+              others
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Cisco</div>
+            <br />
+            <div class="experience-block-place-role">Software Engineer L10</div>
+            <div class="experience-block-place-time">June 2022 - Nov 2022</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Working as a senior member of the technical team of Cisco SDWAN
+              vManage Application.
+            </li>
+            <li>Working extensively using React with Redux.</li>
+            <li>Mentoring and onboarding newcomers for vManage app.</li>
+            <li>
+              Suggesting process improvement, best practices across teams.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Infoblox</div>
+            <br />
+            <div class="experience-block-place-role">
+              Senior Software Engineer <br />
+              | <br />
+              | <br />
+              | <br />
+              Software Engineer 2
+            </div>
+            <div class="experience-block-place-time">April 2020 - May 2022</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Worked as module owner for On-prem in BloxOne product and was
+              responsible for tasks like feature addition, unit testing,
+              improvement etc. Responsible for taking critical decision for UI
+              related implementations and UX reviews. Helped Infoblox to build a
+              strong UI team in Bengaluru for B1DDI platform by interviewing
+              engineers both from India and US.
+            </li>
+            <li>
+              Engaged on migrating large monolithic browser application (Blox
+              One DDI) to Micro front-end architecture without breaking current
+              user experience. The architecture lets developers do individual
+              development and deployment across teams from different time zone.
+            </li>
+            <li>
+              HLD creation for architectural changes and proposals. Engaged on
+              several POCs related to in depth build configurations for
+              applications running on different frameworks.
+            </li>
+            <li>
+              Worked closely with back end engineers to design (and frequently
+              implemented) GraphQL schemas which properly model the domain and
+              providing maximum flexibility for queries
+            </li>
+            <li>
+              Worked on content sharing platform like AWS Cloudfront, S3,
+              implemented security improvement for CDN network with the help of
+              Subresource Integrity, Content Security Policy for Cloudfront etc.
+            </li>
+            <li>
+              Developed a variety of data visualization components using D3 and
+              SVG
+            </li>
+            <li>
+              Created Schematics specifically for the platform that enable
+              developers to convert angular app into micro front-end with a
+              single command.
+            </li>
+            <li>
+              Engaged on creating and maintaining angular libraries which used
+              by other teams for day to day purpose. Also published and
+              maintained library versioning system.
+            </li>
+            <li>
+              Worked on other aspect of deployment stuff like Jenkins, Helm
+              Chart , Kubernetes, AWS, Spninnaker, Docker etc. Created Jenkins
+              file and Makefile configurations. Played a role of SME in UI
+              Architecture.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">
+              Cognizant Technology Solutions
+            </div>
+            <br />
+            <div class="experience-block-place-role">
+              Associate Software Engineer
+            </div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Designed and developed scalable, modular front-end architectures
+              using Angular, React, and Material frameworks for building
+              responsive Single Page Applications.
+            </li>
+            <li>
+              Built enterprise-grade applications and POCs using React, Redux,
+              Flask (Python), MongoDB, and Node.js (Express), covering all
+              stages of the product lifecycle in Agile and Waterfall models.
+            </li>
+            <li>
+              Collaborated with design teams to recommend user-friendly
+              interfaces, emphasizing clean, efficient, and accessible UX
+              patterns.
+            </li>
+            <li>
+              Proficient in Webpack, NPM, Grunt, and modern version control
+              tools (Git, TFS, VSTS) to streamline development workflows and
+              ensure quality delivery.
+            </li>
+            <li>
+              Recognized in multiple hackathons; proactive in adopting new
+              technologies and patterns, with a passion for continuous
+              improvement and innovation.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <p>Thanks y'all. ☕</p>
+      <h1 class="my-name">SHOVAN DHARA</h1>
+      <div class="big-ol-fist__outro"></div>
+      <div class="contact" style="position: relative">
+        <a href="https://github.com/shovanDhara">
+          <img class="svg-icon" src="gh-icon.svg" />
+          <span class="baffling">shovanDhara</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shovan-dhara/">
+          <img class="svg-icon" src="linkedin-icon.svg" />
+          <span class="baffling">Shovan Dhara</span>
+        </a>
+        <a href="mailto:shovan.9836@gmail.com">
+          <img class="svg-icon" src="email-icon.svg" />
+          <span class="baffling">shovan.9836@gmail.com</span>
+        </a>
+        <a href="resume.pdf" target="_blank">
+          <img class="svg-icon" src="dl-icon.svg" />
+          <span class="baffling">Resume DL</span>
+        </a>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+    <style>
+      body {
+        display: block;
+      }
+    </style>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
 </html>
