@@ -84,17 +84,17 @@ if (canvas) {
     const baseMaterial = new THREE.MeshStandardMaterial({
       color: node.color,
       transparent: true,
-      opacity: 0.13,
+      opacity: 0.08,
       roughness: 0.36,
       metalness: 0.08,
       emissive: node.color,
-      emissiveIntensity: 0.025,
+      emissiveIntensity: 0.015,
       depthWrite: false,
     });
     const edgeMaterial = new THREE.LineBasicMaterial({
       color: node.color,
       transparent: true,
-      opacity: 0.42,
+      opacity: 0.28,
     });
     const mesh = new THREE.Mesh(shapeGeometries[node.type], baseMaterial);
     const edges = new THREE.LineSegments(
@@ -128,7 +128,7 @@ if (canvas) {
       color: graphite,
       size: 0.105,
       transparent: true,
-      opacity: 0.58,
+      opacity: 0.42,
       sizeAttenuation: true,
       depthWrite: false,
     }),
@@ -143,7 +143,7 @@ if (canvas) {
     new THREE.LineBasicMaterial({
       color: 0x7daeb8,
       transparent: true,
-      opacity: 0.24,
+      opacity: 0.16,
       depthWrite: false,
     }),
   );
@@ -168,7 +168,7 @@ if (canvas) {
   const gridMaterials = Array.isArray(grid.material) ? grid.material : [grid.material];
   gridMaterials.forEach((material) => {
     material.transparent = true;
-    material.opacity = 0.16;
+    material.opacity = 0.1;
     material.depthWrite = false;
   });
   lattice.add(grid);
@@ -325,17 +325,17 @@ if (canvas) {
       );
 
       mesh.scale.setScalar(mesh.userData.baseScale * (1 + hover * 0.24));
-      mesh.material.opacity = 0.13 + hover * 0.12;
-      mesh.material.emissiveIntensity = 0.025 + hover * 0.18;
-      mesh.userData.edgeMaterial.opacity = 0.42 + hover * 0.16;
+      mesh.material.opacity = 0.08 + hover * 0.08;
+      mesh.material.emissiveIntensity = 0.015 + hover * 0.12;
+      mesh.userData.edgeMaterial.opacity = 0.28 + hover * 0.12;
       mesh.rotation.x += spin * motionScale;
       mesh.rotation.y += spin * (1.4 + hover * 2.2) * motionScale;
     });
 
     const hoveredAmount = hoveredMesh ? 1 : 0;
     connectionLines.material.opacity +=
-      (0.24 + hoveredAmount * 0.1 - connectionLines.material.opacity) * 0.1;
-    dots.material.opacity += (0.58 + hoveredAmount * 0.07 - dots.material.opacity) * 0.1;
+      (0.16 + hoveredAmount * 0.07 - connectionLines.material.opacity) * 0.1;
+    dots.material.opacity += (0.42 + hoveredAmount * 0.05 - dots.material.opacity) * 0.1;
 
     if (hoveredMesh) {
       hoverHalo.visible = true;
@@ -345,7 +345,7 @@ if (canvas) {
           (1.35 + Math.sin(elapsed * 5.2) * 0.05),
       );
       hoverHalo.material.color.copy(hoveredMesh.material.color);
-      hoverHalo.material.opacity += (0.16 - hoverHalo.material.opacity) * 0.16;
+      hoverHalo.material.opacity += (0.1 - hoverHalo.material.opacity) * 0.16;
       hoverHalo.rotation.x -= 0.012 * motionScale;
       hoverHalo.rotation.y += 0.018 * motionScale;
     } else {
