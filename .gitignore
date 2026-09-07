@@ -1,0 +1,9 @@
+.chrome-shot/
+.chrome-shot2/
+.chrome-shot3/
+.chrome-tmp/
+.zoneshots/
+zonecheck.html
+zones.png
+art/_preview*.png
+.venv/

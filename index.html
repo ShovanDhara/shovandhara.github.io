@@ -3,777 +3,957 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hey, it's me! Shovan Dhara!</title>
+    <title>Shovan Dhara — Frontend Architecture SME</title>
+    <meta
+      name="description"
+      content="Shovan Dhara, Frontend Architecture SME with 11+ years leading technical strategy and high-level design for large-scale web applications."
+    />
+    <meta name="theme-color" content="#2a2338" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Shovan Dhara — Frontend Architecture SME" />
+    <meta
+      property="og:description"
+      content="11+ years architecting micro frontend ecosystems, design systems, and end-to-end web platforms."
+    />
+    <meta property="og:image" content="art/px-build-mfe.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Knewave"
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="px-style.css?v=biome21" />
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-123012336-1");
+      document.documentElement.classList.add("js");
     </script>
-    <style>
-      body {
-        display: none;
-      }
-      .first-name {
-        padding-right: 2rem;
-      }
-      .intro-blurb-title {
-        font-size: 1.2rem;
-        font-weight: 700;
-        font-family: "Times New Roman", Times, serif;
-        color: #2c3e50;
-        margin-bottom: 1rem;
-        letter-spacing: 0.5px;
-        text-transform: capitalize;
-        font-style: italic;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .intro-blurb-title:hover {
-        color: #24bbcc;
-        transform: translateY(-2px);
-      }
-    </style>
   </head>
-  <body>
-    <nav class="hud-nav" aria-label="Portfolio sections">
-      <div class="hud-nav__rail">
-        <a class="hud-nav__link is-active" href="#home" data-nav-link>
-          <span class="hud-nav__code">00</span>
-          <span>Home</span>
-        </a>
-        <a class="hud-nav__link" href="#things" data-nav-link>
-          <span class="hud-nav__code">01</span>
-          <span>Loadout</span>
-        </a>
-        <a class="hud-nav__link" href="#skills" data-nav-link>
-          <span class="hud-nav__code">02</span>
-          <span>Skills</span>
-        </a>
-        <a class="hud-nav__link" href="#experience" data-nav-link>
-          <span class="hud-nav__code">03</span>
-          <span>XP</span>
-        </a>
-        <a class="hud-nav__link" href="#projects" data-nav-link>
-          <span class="hud-nav__code">04</span>
-          <span>Builds</span>
-        </a>
-        <a class="hud-nav__link" href="#contact" data-nav-link>
-          <span class="hud-nav__code">05</span>
-          <span>Comms</span>
-        </a>
-      </div>
+
+  <body data-season="harvest">
+    <!-- ══════════ The world behind the road ══════════ -->
+    <div class="sky" aria-hidden="true">
+      <span class="sky__wash"></span>
+      <span class="sky__moon"></span>
+      <span class="sky__sun"></span>
+    </div>
+
+    <!-- Staggered delays keep at least one cumulus crossing at any moment. -->
+    <div class="clouds" aria-hidden="true">
+      <span class="cloud" style="--lane: 9%; --w: 460px; --time: 224s; --wait: -26s; --tone: 0.9">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="cloud" style="--lane: 22%; --w: 300px; --time: 176s; --wait: -104s; --tone: 0.72">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="cloud" style="--lane: 4%; --w: 620px; --time: 288s; --wait: -190s; --tone: 0.82">
+        <i></i><i></i><i></i><i></i>
+      </span>
+      <span class="cloud" style="--lane: 31%; --w: 210px; --time: 142s; --wait: -66s; --tone: 0.55">
+        <i></i><i></i><i></i><i></i>
+      </span>
+    </div>
+
+    <div class="scenery" aria-hidden="true">
+      <div class="layer layer--clouds" data-depth="0.05"></div>
+      <div class="layer layer--far" data-aspect="20"></div>
+      <div class="layer layer--mid" data-aspect="32"></div>
+      <div class="layer layer--water" data-aspect="60"></div>
+      <div class="layer layer--trees" data-aspect="68"></div>
+      <div class="layer layer--ground" data-depth="1"></div>
+    </div>
+
+    <div class="flock" aria-hidden="true">
+      <!-- A V of five sharing one crossing time, so the formation holds its
+           shape. The delay is what places each bird along the path. -->
+      <span class="bird bird--east bird--far" style="--lane: 9%; --time: 54s; --wait: -6s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--far" style="--lane: 7.6%; --time: 54s; --wait: -4.4s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--far" style="--lane: 10.4%; --time: 54s; --wait: -4.4s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--far" style="--lane: 6.3%; --time: 54s; --wait: -2.8s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--far" style="--lane: 11.7%; --time: 54s; --wait: -2.8s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+
+      <span class="bird bird--west bird--mid" style="--lane: 18%; --time: 41s; --wait: -19s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--near" style="--lane: 29%; --time: 33s; --wait: -11s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--west bird--near" style="--lane: 24%; --time: 47s; --wait: -34s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+      <span class="bird bird--east bird--mid" style="--lane: 13%; --time: 38s; --wait: -25s">
+        <i class="bird__f bird__f--up"></i><i class="bird__f bird__f--mid"></i><i class="bird__f bird__f--down"></i>
+      </span>
+    </div>
+
+    <div class="weather" aria-hidden="true">
+      <div class="fall fall--rain" data-field="rain"></div>
+      <div class="fall fall--snow" data-field="snow"></div>
+      <div class="fall fall--leaves" data-field="leaf"></div>
+      <div class="fall fall--embers" data-field="ember"></div>
+      <div class="mist"></div>
+      <div class="flash"></div>
+    </div>
+
+    <div class="hearth" aria-hidden="true">
+      <span class="hearth__glow"></span>
+      <span class="hearth__flame hearth__flame--outer"></span>
+      <span class="hearth__flame hearth__flame--inner"></span>
+      <span class="hearth__flame hearth__flame--core"></span>
+      <span class="hearth__logs"></span>
+    </div>
+
+    <div class="walker" aria-hidden="true">
+      <img src="art/sprite-hero.png" alt="" width="420" height="420" />
+    </div>
+
+    <div class="dither" aria-hidden="true"></div>
+
+    <a class="skip-link" href="#profile">Skip to profile</a>
+
+    <!-- ══════════ HUD ══════════ -->
+    <header class="brand">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">
+        <b>MY JOURNEY</b>
+        <em>frontend architect, still walking east</em>
+      </span>
+    </header>
+
+    <nav class="track" aria-label="Checkpoints">
+      <ol class="track__list">
+        <li>
+          <a class="ckpt is-active" href="#start" data-ckpt="start"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Start</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#profile" data-ckpt="profile"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Profile</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#loadout" data-ckpt="loadout"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Loadout</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#skills" data-ckpt="skills"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Skills</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#xp" data-ckpt="xp"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Campaign</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#builds" data-ckpt="builds"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Builds</span></a
+          >
+        </li>
+        <li>
+          <a class="ckpt" href="#save" data-ckpt="save"
+            ><span class="ckpt__box"></span><span class="ckpt__name">Save</span></a
+          >
+        </li>
+      </ol>
+      <p class="track__label" data-track-label>Start</p>
+      <p class="climate" data-climate>Harvest dusk</p>
+      <p class="story" data-story>The mill still turns. The road east is open.</p>
     </nav>
-    <canvas id="architectural-bg" aria-hidden="true"></canvas>
-    <div class="big-ol-fist__intro" style="z-index: 1"></div>
-    <div class="intro" id="home">
-      <div
-        class="name"
-        title="Thanks for vibin' and keepin' it tight. If you need me, I'm on my mobile."
-      >
-        <div class="baffling first-name">Hi</div>
-        <div class="baffling first-name">It's</div>
-        <div class="baffling last-name">SHOVAN</div>
-      </div>
-      <br />
-      <div class="contact" style="z-index: 2">
-        <a href="https://github.com/shovanDhara">
-          <img class="svg-icon" src="gh-icon.svg" />
-          <span class="baffling">shovanDhara</span>
-        </a>
-        <a href="https://www.linkedin.com/in/shovan-dhara/">
-          <img class="svg-icon" src="linkedin-icon.svg" />
-          <span class="baffling">Shovan Dhara</span>
-        </a>
-        <a href="mailto:shovan.9836@gmail.com">
-          <img class="svg-icon" src="email-icon.svg" />
-          <span class="baffling">shovan.9836@gmail.com</span>
-        </a>
-        <a href="resume.pdf" target="_blank">
-          <img class="svg-icon" src="dl-icon.svg" />
-          <span class="baffling">Resume DL</span>
-        </a>
-      </div>
-      <div class="intro-blurb">
-        <section>
-          Frontend Architecture SME with 11+ years of experience leading
-          technical strategy and high-level design for high-performance,
-          large-scale web applications. Provides UI leadership for P1
-          initiatives by translating complex requirements into scalable,
-          user-centric experiences. Architects resilient Micro Frontend
-          ecosystems using JavaScript, TypeScript, and modern frameworks
-          including React, Angular, and Vue, enabling faster delivery through
-          build-once–deploy-anywhere strategies and shared libraries. Brings
-          strong backend and data-layer expertise using Node.js, MongoDB,
-          GraphQL, and Prisma to design cohesive end-to-end systems. Drives
-          innovation through POCs, boosts developer productivity by 50%, and
-          ensures system quality through cross-functional collaboration and
-          architectural leadership.
-        </section>
-        <section class="intro-blurb-title">
-          “If I had an hour to solve a problem and my life depended on the
-          solution, I would spend the first 55 minutes determining the proper
-          question to ask, for once I know the proper question, I could solve
-          the problem in less than five minutes.” — Albert Einstein, Theoretical
-          Physicist.
-        </section>
-      </div>
-    </div>
-    <div class="content">
-      <section class="things-i-bring-section" id="things">
-        <h1 class="baffling">Here are a few of the things I bring</h1>
-        <div class="things-i-bring-grid">
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art"><img src="love-art.png" /></div>
-            <h2 class="thing-i-bring-title">
-              Your Frontend Ally and DOM Diplomat
+
+    <a class="cta" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+
+    <!-- ══════════ The road ══════════ -->
+    <main class="road" id="road" tabindex="-1">
+      <!-- ─── Start ─── -->
+      <section class="stage stage--title" id="start" data-group="start" aria-labelledby="start-h">
+        <div class="set set--mill" aria-hidden="true">
+          <img class="set__sprite" src="art/set-mill.png" alt="" width="320" height="248" />
+          <span class="mill__hub">
+            <img src="art/set-mill-sails.png" alt="" width="176" height="176" />
+          </span>
+        </div>
+        <div class="stage__inner">
+          <p class="eyebrow">Player 1 · Bengaluru, IN</p>
+          <h1 class="title" id="start-h">Shovan<br />Dhara</h1>
+          <p class="title__class" data-typewriter="Frontend Architecture SME · Lv.11">
+            Frontend Architecture SME · Lv.11
+          </p>
+
+          <ul class="pips">
+            <li><b>11+</b><span>years on the road</span></li>
+          </ul>
+
+          <p class="title__go"><a class="btn" href="#profile">Start the run &gt;</a></p>
+        </div>
+        <img class="prop prop--barrel" src="art/prop-barrel.png" alt="" aria-hidden="true" />
+        <img class="prop prop--signpost" src="art/prop-signpost.png" alt="" aria-hidden="true" />
+      </section>
+
+      <!-- ─── Profile ─── -->
+      <section class="stage" id="profile" data-group="profile" aria-labelledby="profile-h">
+        <div class="set set--well" aria-hidden="true">
+          <img class="set__sprite" src="art/set-well.png" alt="" width="280" height="240" />
+          <span class="well__rope"></span>
+          <span class="well__bucket">
+            <img src="art/set-well-bucket.png" alt="" width="44" height="40" />
+          </span>
+        </div>
+        <div class="stage__inner">
+          <div class="panel panel--wide">
+            <p class="panel__code">01 · Status</p>
+            <h2 class="panel__title" id="profile-h">Player Profile</h2>
+
+            <div class="profile">
+              <div class="profile__side">
+                <img
+                  class="profile__avatar"
+                  src="art/px-avatar.png"
+                  alt="Pixel art portrait of Shovan Dhara in a carved wooden frame"
+                  width="460"
+                  height="460"
+                />
+                <p class="profile__name">Shovan Dhara</p>
+                <p class="profile__role">UI Tech Lead · Josys</p>
+              </div>
+
+              <div class="profile__main">
+                <p class="prose">
+                  Frontend Architecture SME with 11+ years of experience leading technical
+                  strategy and high-level design for high-performance, large-scale web
+                  applications. Provides UI leadership for P1 initiatives by translating complex
+                  requirements into scalable, user-centric experiences. Architects resilient Micro
+                  Frontend ecosystems using JavaScript, TypeScript, and modern frameworks including
+                  React, Angular, and Vue, enabling faster delivery through
+                  build-once–deploy-anywhere strategies and shared libraries. Brings strong backend
+                  and data-layer expertise using Node.js, MongoDB, GraphQL, and Prisma to design
+                  cohesive end-to-end systems. Drives innovation through POCs, ships shared
+                  libraries and CLI tooling, and ensures system quality through cross-functional
+                  collaboration and architectural leadership.
+                </p>
+
+                <ul class="stats">
+                  <li class="stat">
+                    <span class="stat__name">Frontend architecture</span>
+                    <span class="stat__bar"><i style="--fill: 96%"></i></span>
+                  </li>
+                  <li class="stat">
+                    <span class="stat__name">JavaScript &amp; TypeScript</span>
+                    <span class="stat__bar"><i style="--fill: 94%"></i></span>
+                  </li>
+                  <li class="stat">
+                    <span class="stat__name">Micro frontends</span>
+                    <span class="stat__bar"><i style="--fill: 92%"></i></span>
+                  </li>
+                  <li class="stat">
+                    <span class="stat__name">Backend &amp; data layer</span>
+                    <span class="stat__bar"><i style="--fill: 78%"></i></span>
+                  </li>
+                  <li class="stat">
+                    <span class="stat__name">AI &amp; automation</span>
+                    <span class="stat__bar"><i style="--fill: 80%"></i></span>
+                  </li>
+                  <li class="stat">
+                    <span class="stat__name">Leadership &amp; mentoring</span>
+                    <span class="stat__bar"><i style="--fill: 90%"></i></span>
+                  </li>
+                </ul>
+
+                <blockquote class="codex">
+                  <p>
+                    “If I had an hour to solve a problem and my life depended on the solution, I
+                    would spend the first 55 minutes determining the proper question to ask, for
+                    once I know the proper question, I could solve the problem in less than five
+                    minutes.”
+                  </p>
+                  <cite>— Albert Einstein, Theoretical Physicist</cite>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Loadout ─── -->
+      <section class="stage stage--pitch" id="loadout" data-group="loadout" aria-labelledby="loadout-h">
+        <div class="set set--fort" aria-hidden="true">
+          <img class="set__sprite" src="art/set-fort.png" alt="" width="400" height="260" />
+          <span class="fort__lift">
+            <img src="art/set-crate.png" alt="" width="32" height="34" />
+          </span>
+          <span class="keeper">
+            <i class="keeper__arm keeper__arm--back"></i>
+            <i class="keeper__body"></i>
+            <i class="keeper__head"></i>
+            <i class="keeper__arm keeper__arm--front"></i>
+          </span>
+        </div>
+        <div class="tower tower--gryffindor tower--high tower--west" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--rare">
+            <div class="build__art">
+              <img
+                src="art/item-ally.png"
+                alt="Pixel art wooden shield carved with a branching DOM tree"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 01</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Shield</span>
+                <span class="kit__rarity kit__rarity--rare">Rare</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title" id="loadout-h">Frontend Ally &amp; DOM Diplomat</h2>
+              <p class="kit__flavor">Held between the mock and the markup.</p>
+              <p class="prose">
+                The shield he raises when design and engineering start talking past each other. He
+                reads the DOM the way a scout reads a map — every node, every crossing.
+              </p>
+              <ul class="kit__affix">
+                <li>Design diplomacy</li>
+                <li>DOM fluency</li>
+              </ul>
+              <ul class="tags">
+                <li>Design</li>
+                <li>DOM</li>
+                <li>UX</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--pitch" id="loadout-2" data-group="loadout" aria-label="JavaScript, TypeScript and Beyond">
+        <div class="tower tower--slytherin tower--mid tower--east" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--epic">
+            <div class="build__art">
+              <img
+                src="art/item-js.png"
+                alt="Pixel art crossed blades resting on a leather-bound tome"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 02</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Twin blades</span>
+                <span class="kit__rarity kit__rarity--epic">Epic</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title">JavaScript, TypeScript &amp; Beyond</h2>
+              <p class="kit__flavor">Forged in the language. Honed on the type.</p>
+              <p class="prose">
+                Twin blades, kept sharp. Modern JavaScript in one hand, TypeScript in the other, and
+                whatever framework the road asks for that week.
+              </p>
+              <ul class="kit__affix">
+                <li>Language craft</li>
+                <li>Type safety</li>
+                <li>Tooling</li>
+              </ul>
+              <ul class="tags">
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>React</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--pitch" id="loadout-3" data-group="loadout" aria-label="Built on Best Practices">
+        <div class="tower tower--hufflepuff tower--low tower--west" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--rare">
+            <div class="build__art">
+              <img
+                src="art/item-practices.png"
+                alt="Pixel art blueprint scroll with a brass drafting compass"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 03</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Codex</span>
+                <span class="kit__rarity kit__rarity--rare">Rare</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title">Built on Best Practices</h2>
+              <p class="kit__flavor">Draw the map before you cut the road.</p>
+              <p class="prose">
+                He does not just raise the wall. He writes the pattern, names the stone, and leaves
+                the next mason a way through.
+              </p>
+              <ul class="kit__affix">
+                <li>Patterns</li>
+                <li>Documentation</li>
+                <li>Scale</li>
+              </ul>
+              <ul class="tags">
+                <li>Architecture</li>
+                <li>Docs</li>
+                <li>Patterns</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--pitch" id="loadout-4" data-group="loadout" aria-label="End-to-End Ownership">
+        <div class="tower tower--ravenclaw tower--high tower--east" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--epic">
+            <div class="build__art">
+              <img
+                src="art/item-ownership.png"
+                alt="Pixel art figure-eight chain of brass gears with a pennant"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 04</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Relic</span>
+                <span class="kit__rarity kit__rarity--epic">Epic</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title">End-to-End Ownership</h2>
+              <p class="kit__flavor">What he starts, he walks to the far shore.</p>
+              <p class="prose">
+                From the first behavior to the last deploy, then back again. The loop is the relic —
+                he carries the whole circuit, not a single link.
+              </p>
+              <ul class="kit__affix">
+                <li>Closed loop</li>
+                <li>Delivery</li>
+              </ul>
+              <ul class="tags">
+                <li>Ownership</li>
+                <li>Systems</li>
+                <li>Delivery</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--pitch" id="loadout-5" data-group="loadout" aria-label="UI Obsessed, Problem Focused">
+        <div class="tower tower--hogwarts tower--mid tower--west" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--rare">
+            <div class="build__art">
+              <img
+                src="art/item-ui.png"
+                alt="Pixel art magnifying glass with an amber reticle over blank interface cards"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 05</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Glass</span>
+                <span class="kit__rarity kit__rarity--rare">Rare</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title">UI Obsessed, Problem Focused</h2>
+              <p class="kit__flavor">The crack in the pane is where the work begins.</p>
+              <p class="prose">
+                A clean interface is not decoration. It is how he finds the pain, takes the problem,
+                and files it down until it fits the hand.
+              </p>
+              <ul class="kit__affix">
+                <li>Pain-point sight</li>
+                <li>Interface craft</li>
+              </ul>
+              <ul class="tags">
+                <li>UI</li>
+                <li>Craft</li>
+                <li>Problems</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage stage--pitch" id="loadout-6" data-group="loadout" aria-label="No Great Idea Left Behind">
+        <div class="tower tower--seeker tower--low tower--east" aria-hidden="true">
+          <span class="tower__shaft"></span>
+          <span class="tower__lip"></span>
+          <span class="tower__flag"><i class="tower__cloth"></i><i class="tower__mark"></i></span>
+        </div>
+        <div class="stage__inner">
+          <article class="build kit kit--legendary">
+            <div class="build__art">
+              <img
+                src="art/item-ideas.png"
+                alt="Pixel art brass lantern glowing amber with drifting sparks"
+                width="360"
+                height="360"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">02 · Slot 06</p>
+              <p class="kit__meta">
+                <span class="kit__slot">Light</span>
+                <span class="kit__rarity kit__rarity--legendary">Legendary</span>
+                <span class="panel__tag">Equipped</span>
+              </p>
+              <h2 class="panel__title">No Great Idea Left Behind</h2>
+              <p class="kit__flavor">Even the odd spark gets a wick.</p>
+              <p class="prose">
+                Unconventional ideas do not get left on the trail. He lights them, walks them a
+                mile, and sees if they burn.
+              </p>
+              <ul class="kit__affix">
+                <li>POC fire</li>
+                <li>Overlooked ideas</li>
+              </ul>
+              <ul class="tags">
+                <li>Ideas</li>
+                <li>POCs</li>
+                <li>Innovation</li>
+              </ul>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Skills ─── -->
+      <section class="stage" id="skills" data-group="skills" aria-labelledby="skills-h">
+        <div class="set set--forge" aria-hidden="true">
+          <img class="set__sprite" src="art/set-forge.png" alt="" width="360" height="248" />
+          <span class="forge__sparks"><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="smith">
+            <i class="smith__body"></i>
+            <i class="smith__head"></i>
+            <i class="smith__arm"><b class="smith__hammer"></b></i>
+          </span>
+        </div>
+        <div class="stage__inner">
+          <div class="panel panel--wide">
+            <p class="panel__code">03 · Abilities</p>
+            <h2 class="panel__title" id="skills-h">Technical</h2>
+            <ul class="bullets bullets--two">
+              <li>Modern JavaScript, Typescript, CSS, and HTML</li>
+              <li>Web Browser APIs, dev tools, and perf profiling</li>
+              <li>
+                Component-based, state-driven, declarative UI frameworks (React, NEXT Js, React
+                Query, Redux, Single SPA)
+              </li>
+              <li>Webpack, babel, eslint</li>
+              <li>Testing Tools — Cypress, Jest, React Testing Library</li>
+              <li>Architecture — Monolithic, Micro Front-End</li>
+              <li>Backend — Node JS, Python (Basic)</li>
+              <li>DB — Mongo DB, PostgreSQL</li>
+              <li>Query Language — GraphQL</li>
+              <li>
+                Security Integration — Sub-resource Integrity, Content Security Policy in
+                CloudFront CDN
+              </li>
+              <li>
+                Infra — AWS S3, CloudFront, Helm Chart, Makefile, Jenkins, Nginx Config and
+                Debugging, K8s, Docker
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage" id="skills-2" data-group="skills" aria-label="Abilities, continued">
+        <div class="stage__inner stage__inner--pair">
+          <div class="panel">
+            <p class="panel__code">03 · Abilities</p>
+            <h2 class="panel__title">Planning &amp; Collaboration</h2>
+            <ul class="bullets">
+              <li>Collaboration across product, design, and engineering</li>
+              <li>User-centered design thinking</li>
+              <li>Planning for incremental delivery (Agile/Scrum)</li>
+              <li>Rapid prototyping and communication with wireframes</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <p class="panel__code">03 · Abilities</p>
+            <h2 class="panel__title">AI &amp; Automation</h2>
+            <ul class="bullets">
+              <li>Built Schematics (Created CLI Tools to simplify and enhance the DX)</li>
+              <li>
+                AI-assisted development using Cursor IDE and Cursor MCP for accelerated coding and
+                refactoring
+              </li>
+              <li>Building AI-powered features using Vercel AI SDK and OpenAI APIs</li>
+              <li>Integrating LLMs into frontend workflows for intelligent UX and automation</li>
+              <li>Rapid prototyping of AI-driven Proofs of Concept (POCs)</li>
+              <li>Evaluating AI use-cases for product impact and system feasibility</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Campaign ─── -->
+      <section class="stage" id="xp" data-group="xp" aria-labelledby="xp-h">
+        <div class="set set--tower" aria-hidden="true">
+          <img class="set__sprite" src="art/set-tower.png" alt="" width="300" height="280" />
+          <span class="tower__beam"></span>
+          <span class="sentry"><i></i><i></i></span>
+        </div>
+        <div class="stage__inner">
+          <div class="panel panel--wide">
+            <p class="panel__code">04 · Campaign · Stage 04</p>
+            <h2 class="panel__title" id="xp-h">Josys <span class="panel__tag">current</span></h2>
+            <p class="panel__role">UI Tech Lead <span>Dec 2022 — Present</span></p>
+            <ul class="bullets bullets--two">
+              <li>
+                <b>Product Enhancement Leadership:</b> Led a talented team in transforming user
+                experiences and improving product performance at Josys by driving forward-thinking
+                UI/UX enhancements.
+              </li>
+              <li>
+                <b>UI Development Mastery:</b> Leveraged React.js proficiency to craft innovative UI
+                libraries and Design Systems, accelerating component development and ensuring
+                consistent, scalable interfaces across our products.
+              </li>
+              <li>
+                <b>Code Optimization &amp; Innovation:</b> Spearheaded code optimizations, Micro
+                Frontend integration, and i18n strategies, instrumental in successful global product
+                launches and bolstering our technical foundation.
+              </li>
+              <li>
+                <b>Efficiency &amp; Automation:</b> Implemented automation in the release process,
+                streamlining operations for faster iterations and impeccable product deliveries,
+                contributing directly to increased operational efficiency.
+              </li>
+              <li>
+                <b>Measurable Impact:</b> These efforts directly correlated with tangible outcomes,
+                significantly elevating product sales and reinforcing our position in the market,
+                fostering company growth.
+              </li>
+              <li>
+                Daily involvement with a whole host of AWS services like CloudFront, S3, EC2,
+                Cloudwatch, and many others.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img class="prop prop--banner" src="art/prop-banner.png" alt="" aria-hidden="true" />
+      </section>
+
+      <section class="stage" id="xp-2" data-group="xp" aria-label="Campaign, Cisco">
+        <div class="stage__inner">
+          <div class="panel">
+            <p class="panel__code">04 · Campaign · Stage 03</p>
+            <h2 class="panel__title">Cisco <span class="panel__tag">cleared</span></h2>
+            <p class="panel__role">Software Engineer L10 <span>June 2022 — Nov 2022</span></p>
+            <ul class="bullets">
+              <li>
+                Working as a senior member of the technical team of Cisco SDWAN vManage Application.
+              </li>
+              <li>Working extensively using React with Redux.</li>
+              <li>Mentoring and onboarding newcomers for vManage app.</li>
+              <li>Suggesting process improvement, best practices across teams.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage" id="xp-3" data-group="xp" aria-label="Campaign, Infoblox">
+        <div class="stage__inner">
+          <div class="panel panel--wide">
+            <p class="panel__code">04 · Campaign · Stage 02</p>
+            <h2 class="panel__title">Infoblox <span class="panel__tag">cleared</span></h2>
+            <p class="panel__role">Senior Software Engineer <span>Oct 2021 — May 2022</span></p>
+            <p class="panel__role">Software Engineer 2 <span>April 2020 — Sept 2021</span></p>
+            <ul class="bullets bullets--two">
+              <li>
+                Worked as module owner for On-prem in BloxOne product and was responsible for tasks
+                like feature addition, unit testing, improvement etc. Responsible for taking
+                critical decision for UI related implementations and UX reviews. Helped Infoblox to
+                build a strong UI team in Bengaluru for B1DDI platform by interviewing engineers
+                both from India and US.
+              </li>
+              <li>
+                Engaged on migrating large monolithic browser application (Blox One DDI) to Micro
+                front-end architecture without breaking current user experience. The architecture
+                lets developers do individual development and deployment across teams from different
+                time zone.
+              </li>
+              <li>
+                Worked closely with back end engineers to design (and frequently implemented)
+                GraphQL schemas which properly model the domain and providing maximum flexibility
+                for queries.
+              </li>
+              <li>
+                Worked on content sharing platform like AWS Cloudfront, S3, implemented security
+                improvement for CDN network with the help of Subresource Integrity, Content Security
+                Policy for Cloudfront etc.
+              </li>
+              <li>
+                Created Schematics specifically for the platform that enable developers to convert
+                angular app into micro front-end with a single command.
+              </li>
+              <li>
+                Engaged on creating and maintaining angular libraries which used by other teams for
+                day to day purpose. Also published and maintained library versioning system.
+              </li>
+              <li>
+                Worked on other aspect of deployment stuff like Jenkins, Helm Chart, Kubernetes,
+                AWS, Spinnaker, Docker etc. Created Jenkins file and Makefile configurations. Played
+                a role of SME in UI Architecture.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img class="prop prop--banner" src="art/prop-banner.png" alt="" aria-hidden="true" />
+      </section>
+
+      <section class="stage" id="xp-4" data-group="xp" aria-label="Campaign, Cognizant">
+        <div class="stage__inner">
+          <div class="panel panel--wide">
+            <p class="panel__code">04 · Campaign · Stage 01</p>
+            <h2 class="panel__title">
+              Cognizant <span class="panel__tag">starting village</span>
             </h2>
-            <p class="thing-i-bring-blurb">
-              Bridging design and development, I champion frontend excellence
-              with a deep understanding of the DOM and user experience.
-            </p>
-          </div>
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art"><img src="modernjs-art.png" /></div>
-            <h2 class="thing-i-bring-title">JavaScript, TypeScript & Beyond</h2>
-            <p class="thing-i-bring-blurb">
-              Always exploring the cutting edge—modern JavaScript, TypeScript,
-              powerful frameworks, and robust tooling are my daily tools of
-              choice.
-            </p>
-          </div>
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art"><img src="cleanui-art.png" /></div>
-            <h2 class="thing-i-bring-title">Built on Best Practices</h2>
-            <p class="thing-i-bring-blurb">
-              I don’t just build—I document, refine, and scale using proven
-              architectural patterns and frontend principles.
-            </p>
-          </div>
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art">
-              <img src="ideatoimpl-art.png" />
-            </div>
-            <h2 class="thing-i-bring-title">End-to-End Ownership</h2>
-            <p class="thing-i-bring-blurb">
-              From behavior-driven UX to system planning, from code
-              implementation to seamless delivery—I loop back, always improving.
-            </p>
-          </div>
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art">
-              <img src="initiative-art.png" />
-            </div>
-            <h2 class="thing-i-bring-title">UI Obsessed, Problem Focused</h2>
-            <p class="thing-i-bring-blurb">
-              A passion for clean, functional UI pushes me to identify pain
-              points, take ownership, and deliver elegant solutions.
-            </p>
-          </div>
-          <div class="thing-i-bring">
-            <div class="thing-i-bring-art"><img src="crossteam-art.png" /></div>
-            <h2 class="thing-i-bring-title">No Great Idea Left Behind</h2>
-            <p class="thing-i-bring-blurb">
-              I believe even unconventional ideas deserve a shot—let’s elevate
-              the overlooked into the extraordinary.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section class="some-skills-section" id="skills">
-        <h1 class="baffling">These are *some* of my skills</h1>
-        <div class="some-skills">
-          <div class="some-skills-column">
-            <div class="some-skills-block">
-              <h2 class="some-skills-block-title">Technical</h2>
-              <ul class="some-skills-block-list">
-                <li>Modern JavaScript, Typescript, CSS, and HTML</li>
-                <li>Web Browser APIs, dev tools, and perf profiling</li>
-                <li>
-                  Component-based, state-driven, declarative UI frameworks (
-                  React, NEXT Js, React Query, Redux, Single SPA)
-                </li>
-                <li>Webpack, babel, eslint</li>
-                <li>Testing Tools - Cypress, Jest, React Testing Library</li>
-                <li>Architecture – Monolithic, Micro Front-End</li>
-                <li>Backend – Node JS, Python(Basic)</li>
-                <li>DB – Mongo DB, PostgreSQL</li>
-                <li>Query Language – GraphQL</li>
-                <li>
-                  Security Integration - Sub-resource Integrity, Content
-                  Security Policy in CloudFront CDN
-                </li>
-                <li>
-                  Infra – AWS S3, CloudFront, Helm Chart, Makefile, Jenkins,
-                  Nginx Config and Debugging, K8s, Docker
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="some-skills-column">
-            <img width="100%" src="skills-art-placeholder.png" />
-          </div>
-          <div class="some-skills-column">
-            <div class="some-skills-block">
-              <h2 class="some-skills-block-title">
-                Planning and Collaboration
-              </h2>
-              <ul class="some-skills-block-list">
-                <li>Collaboration across product, design, and engineering</li>
-                <li>User-centered design thinking</li>
-                <li>Planning for incremental delivery (Agile/Scrum)</li>
-                <li>Rapid prototyping and communication with wireframes</li>
-              </ul>
-            </div>
-            <div class="some-skills-block">
-              <h2 class="some-skills-block-title">AI & Automation</h2>
-              <ul class="some-skills-block-list">
-                <li>
-                  Built Schematics (Created CLI Tools to simplify and enhance
-                  the DX)
-                </li>
-                <li>
-                  AI-assisted development using Cursor IDE and Cursor MCP for
-                  accelerated coding and refactoring
-                </li>
-                <li>
-                  Building AI-powered features using Vercel AI SDK and OpenAI
-                  APIs
-                </li>
-                <li>
-                  Integrating LLMs into frontend workflows for intelligent UX
-                  and automation
-                </li>
-                <li>Rapid prototyping of AI-driven Proofs of Concept (POCs)</li>
-                <li>
-                  Evaluating AI use-cases for product impact and system
-                  feasibility
-                </li>
-              </ul>
-            </div>
+            <p class="panel__role">Associate Software Engineer <span>Dec 2016 — Jan 2020</span></p>
+            <p class="panel__role">Programmer Analyst <span>Aug 2014 — Nov 2016</span></p>
+            <ul class="bullets bullets--two">
+              <li>
+                Designed and developed scalable, modular front-end architectures using Angular,
+                React, and Material frameworks for building responsive Single Page Applications.
+              </li>
+              <li>
+                Built enterprise-grade applications and POCs using React, Redux, Flask (Python),
+                MongoDB, and Node.js (Express), covering all stages of the product lifecycle in
+                Agile and Waterfall models.
+              </li>
+              <li>
+                Collaborated with design teams to recommend user-friendly interfaces, emphasizing
+                clean, efficient, and accessible UX patterns.
+              </li>
+              <li>
+                Proficient in Webpack, NPM, Grunt, and modern version control tools (Git, TFS, VSTS)
+                to streamline development workflows and ensure quality delivery.
+              </li>
+              <li>
+                Recognized in multiple hackathons; proactive in adopting new technologies and
+                patterns, with a passion for continuous improvement and innovation.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="experience-section" id="experience">
-        <h1 class="baffling">This is my work experience</h1>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">Josys</div>
-            <br />
-            <div class="experience-block-place-role">UI Tech Lead</div>
-            <div class="experience-block-place-time">Dec 2022 - Present</div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Product Enhancement Leadership: Led a talented team in
-              transforming user experiences and improving product performance at
-              Josys by driving forward-thinking UI/UX enhancements.
-            </li>
-            <li>
-              UI Development Mastery: Leveraged React.js proficiency to craft
-              innovative UI libraries and Design Systems, accelerating component
-              development and ensuring consistent, scalable interfaces across
-              our products.
-            </li>
-            <li>
-              Code Optimization & Innovation: Spearheaded code optimizations,
-              Micro Frontend integration, and i18n strategies, instrumental in
-              successful global product launches and bolstering our technical
-              foundation.
-            </li>
-            <li>
-              Efficiency & Automation: Implemented automation in the release
-              process, streamlining operations for faster iterations and
-              impeccable product deliveries, contributing directly to increased
-              operational efficiency.
-            </li>
-            <li>
-              Measurable Impact: These efforts directly correlated with tangible
-              outcomes, significantly elevating product sales and reinforcing
-              our position in the market, fostering company growth.
-            </li>
-            <li>
-              Daily involvement with a whole host of AWS services like
-              CloudFront, S3, EC2, Cloudwatch, and many
-              others
-            </li>
-          </ul>
+      <!-- ─── Builds ─── -->
+      <section class="stage" id="builds" data-group="builds" aria-labelledby="builds-h">
+        <div class="set set--yard" aria-hidden="true">
+          <img class="set__sprite" src="art/set-yard.png" alt="" width="380" height="260" />
+          <span class="yard__cable"></span>
+          <span class="yard__load">
+            <img src="art/set-crate.png" alt="" width="36" height="38" />
+          </span>
+          <span class="builder"><i></i><i></i><i></i></span>
         </div>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">Cisco</div>
-            <br />
-            <div class="experience-block-place-role">Software Engineer L10</div>
-            <div class="experience-block-place-time">June 2022 - Nov 2022</div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Working as a senior member of the technical team of Cisco SDWAN
-              vManage Application.
-            </li>
-            <li>Working extensively using React with Redux.</li>
-            <li>Mentoring and onboarding newcomers for vManage app.</li>
-            <li>
-              Suggesting process improvement, best practices across teams.
-            </li>
-          </ul>
-        </div>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">Infoblox</div>
-            <br />
-            <div class="experience-block-place-role">
-              Senior Software Engineer
+        <div class="stage__inner">
+          <article class="build">
+            <div class="build__art">
+              <img
+                src="art/px-build-design-system.png"
+                alt="Pixel art roadside forge crafting identical glowing amber component blocks"
+                width="880"
+                height="660"
+              />
             </div>
-            <div class="experience-block-place-time">Oct 2021 - May 2022</div>
-            <br />
-            <div class="experience-block-place-role">Software Engineer 2</div>
-            <div class="experience-block-place-time">
-              April 2020 - Sept 2021
+            <div class="build__text">
+              <p class="panel__code">05 · Artifact 01</p>
+              <h2 class="panel__title" id="builds-h">Josys In-House Design System</h2>
+              <p class="prose">
+                Developed and maintained a scalable, reusable component library using React and
+                TypeScript, enabling seamless integration across multiple micro frontends. Ensured
+                consistency in UI/UX through modular architecture, strict typing, and adherence to
+                Josys’s design tokens and accessibility standards.
+              </p>
+              <ul class="tags">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Design Tokens</li>
+                <li>A11y</li>
+              </ul>
             </div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Worked as module owner for On-prem in BloxOne product and was
-              responsible for tasks like feature addition, unit testing,
-              improvement etc. Responsible for taking critical decision for UI
-              related implementations and UX reviews. Helped Infoblox to build a
-              strong UI team in Bengaluru for B1DDI platform by interviewing
-              engineers both from India and US.
-            </li>
-            <li>
-              Engaged on migrating large monolithic browser application (Blox
-              One DDI) to Micro front-end architecture without breaking current
-              user experience. The architecture lets developers do individual
-              development and deployment across teams from different time zone.
-            </li>
-            <li>
-              Worked closely with back end engineers to design (and frequently
-              implemented) GraphQL schemas which properly model the domain and
-              providing maximum flexibility for queries
-            </li>
-            <li>
-              Worked on content sharing platform like AWS Cloudfront, S3,
-              implemented security improvement for CDN network with the help of
-              Subresource Integrity, Content Security Policy for Cloudfront etc.
-            </li>
-            <li>
-              Created Schematics specifically for the platform that enable
-              developers to convert angular app into micro front-end with a
-              single command.
-            </li>
-            <li>
-              Engaged on creating and maintaining angular libraries which used
-              by other teams for day to day purpose. Also published and
-              maintained library versioning system.
-            </li>
-            <li>
-              Worked on other aspect of deployment stuff like Jenkins, Helm
-              Chart , Kubernetes, AWS, Spninnaker, Docker etc. Created Jenkins
-              file and Makefile configurations. Played a role of SME in UI
-              Architecture.
-            </li>
-          </ul>
-        </div>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">
-              Cognizant Technology Solutions
-            </div>
-            <br />
-            <div class="experience-block-place-role">
-              Associate Software Engineer
-            </div>
-            <div class="experience-block-place-time">Dec 2016 - Jan 2020</div>
-            <br />
-            <div class="experience-block-place-role">Programmer Analyst</div>
-            <div class="experience-block-place-time">Aug 2014 - Nov 2016</div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Designed and developed scalable, modular front-end architectures
-              using Angular, React, and Material frameworks for building
-              responsive Single Page Applications.
-            </li>
-            <li>
-              Built enterprise-grade applications and POCs using React, Redux,
-              Flask (Python), MongoDB, and Node.js (Express), covering all
-              stages of the product lifecycle in Agile and Waterfall models.
-            </li>
-            <li>
-              Collaborated with design teams to recommend user-friendly
-              interfaces, emphasizing clean, efficient, and accessible UX
-              patterns.
-            </li>
-            <li>
-              Proficient in Webpack, NPM, Grunt, and modern version control
-              tools (Git, TFS, VSTS) to streamline development workflows and
-              ensure quality delivery.
-            </li>
-            <li>
-              Recognized in multiple hackathons; proactive in adopting new
-              technologies and patterns, with a passion for continuous
-              improvement and innovation.
-            </li>
-          </ul>
+          </article>
         </div>
       </section>
 
-      <section class="projects-section" id="projects">
-        <h1 class="baffling">Take a look at selected projects</h1>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">
-              Josys In-House Design System
+      <section class="stage" id="builds-2" data-group="builds" aria-label="Builds, BloxOne">
+        <div class="stage__inner">
+          <article class="build">
+            <div class="build__art">
+              <img
+                src="art/px-build-mfe.png"
+                alt="Pixel art stone monolith breaking into linked floating platforms at dusk"
+                width="880"
+                height="660"
+              />
             </div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Developed and maintained a scalable, reusable component library
-              using React and TypeScript, enabling seamless integration across
-              multiple micro frontends. Ensured consistency in UI/UX through
-              modular architecture, strict typing, and adherence to Josys's
-              design tokens and accessibility standards.
-            </li>
-          </ul>
-        </div>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">
-              Micro-Frontend for BloxOne Platform
+            <div class="build__text">
+              <p class="panel__code">05 · Artifact 02</p>
+              <h2 class="panel__title">Micro-Frontend for BloxOne Platform</h2>
+              <p class="prose">
+                Monolithic to Micro front-end migration — Architected, developed, lead a team, and
+                deployed a micro front end loading platform for an existing monolithic UI
+                application. Aside from developing the browser application, this included a large
+                amount of deployment work involving AWS, Jenkins, Spinnaker, Helm, and Kubernetes.
+              </p>
+              <ul class="tags">
+                <li>Micro Frontends</li>
+                <li>AWS</li>
+                <li>Jenkins</li>
+                <li>Kubernetes</li>
+              </ul>
             </div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Monolithic to Micro front-end migration - Architected, developed,
-              lead a team, and deployed a micro front end loading platform for
-              an existing monolithic UI application. Aside from developing the
-              browser application, this included a large amount of deployment
-              work involving AWS, Jenkins, spinnaker, helm, and Kubernetes.
-            </li>
-          </ul>
-        </div>
-        <div class="experience-block">
-          <div class="experience-block-place">
-            <div class="experience-block-place-title">
-              Custom Angular Schematics Library
-            </div>
-          </div>
-          <ul class="experience-block-experience-list">
-            <li>
-              Developed a custom Schematics Library for converting basic angular
-              boilerplate to a Micro Front-end boilerplate which makes 107
-              individual changes in several files. This library was focused to
-              ease the job of the developer who wants to onboard a new MFE
-              application in the Infoblox SAAS Enterprise platform.
-            </li>
-          </ul>
+          </article>
         </div>
       </section>
+
+      <section class="stage" id="builds-3" data-group="builds" aria-label="Builds, Schematics">
+        <div class="stage__inner">
+          <article class="build">
+            <div class="build__art">
+              <img
+                src="art/px-build-schematics.png"
+                alt="Pixel art inventor's workshop stamping out many identical scrolls"
+                width="880"
+                height="660"
+              />
+            </div>
+            <div class="build__text">
+              <p class="panel__code">05 · Artifact 03</p>
+              <h2 class="panel__title">Custom Angular Schematics Library</h2>
+              <p class="prose">
+                Developed a custom Schematics Library for converting basic angular boilerplate to a
+                Micro Front-end boilerplate which makes 107 individual changes in several files.
+                This library was focused to ease the job of the developer who wants to onboard a new
+                MFE application in the Infoblox SAAS Enterprise platform.
+              </p>
+              <ul class="tags">
+                <li>Angular</li>
+                <li>Schematics</li>
+                <li>CLI / DX</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── Save ─── -->
+      <section class="stage stage--save" id="save" data-group="save" aria-labelledby="save-h">
+        <div class="set set--camp" aria-hidden="true">
+          <img class="set__sprite" src="art/set-camp.png" alt="" width="340" height="220" />
+          <span class="fireflies">
+            <i style="left: 14%; bottom: 30%; --t: 7s; --dx: 22px; --dy: -26px"></i>
+            <i style="left: 38%; bottom: 62%; --t: 9s; --dx: -18px; --dy: 20px"></i>
+            <i style="left: 58%; bottom: 24%; --t: 6s; --dx: 26px; --dy: -18px"></i>
+            <i style="left: 76%; bottom: 54%; --t: 11s; --dx: -24px; --dy: -22px"></i>
+            <i style="left: 90%; bottom: 36%; --t: 8s; --dx: -30px; --dy: 16px"></i>
+            <i style="left: 26%; bottom: 76%; --t: 10s; --dx: 20px; --dy: 24px"></i>
+          </span>
+        </div>
+        <div class="stage__inner">
+          <p class="eyebrow">06 · Save point</p>
+          <h2 class="stage__title" id="save-h">Thanks y’all.</h2>
+          <p class="stage__sub">Game saved. Let’s start a co-op run.</p>
+
+          <ul class="comms">
+            <li>
+              <a class="comm" href="https://github.com/shovanDhara" target="_blank" rel="noopener">
+                <b>GitHub</b><em>shovanDhara</em>
+              </a>
+            </li>
+            <li>
+              <a
+                class="comm"
+                href="https://www.linkedin.com/in/shovan-dhara/"
+                target="_blank"
+                rel="noopener"
+              >
+                <b>LinkedIn</b><em>Shovan Dhara</em>
+              </a>
+            </li>
+            <li>
+              <a class="comm" href="mailto:shovan.9836@gmail.com">
+                <b>Email</b><em>shovan.9836@gmail.com</em>
+              </a>
+            </li>
+            <li>
+              <a class="comm" href="resume.pdf" target="_blank" rel="noopener">
+                <b>Resume</b><em>Download PDF</em>
+              </a>
+            </li>
+          </ul>
+
+          <p class="save__legacy"><a href="legacy/">&gt; Play the legacy build</a></p>
+        </div>
+        <img class="prop prop--campfire" src="art/prop-campfire.png" alt="" aria-hidden="true" />
+      </section>
+    </main>
+
+    <!-- ══════════ Footer HUD ══════════ -->
+    <div class="hints">
+      <p class="hints__keys">
+        <span>walk</span> scroll / drag / <kbd>←</kbd><kbd>→</kbd> ·
+        <kbd>tab</kbd> to skip ahead
+      </p>
+      <p class="hints__east">the road runs east ...</p>
     </div>
-    <footer class="footer" id="contact">
-      <p>Thanks y'all. ☕</p>
-      <h1 class="my-name">SHOVAN DHARA</h1>
-      <div class="big-ol-fist__outro"></div>
-      <div class="contact" style="position: relative">
-        <a href="https://github.com/shovanDhara">
-          <img class="svg-icon" src="gh-icon.svg" />
-          <span class="baffling">shovanDhara</span>
-        </a>
-        <a href="https://www.linkedin.com/in/shovan-dhara/">
-          <img class="svg-icon" src="linkedin-icon.svg" />
-          <span class="baffling">Shovan Dhara</span>
-        </a>
-        <a href="mailto:shovan.9836@gmail.com">
-          <img class="svg-icon" src="email-icon.svg" />
-          <span class="baffling">shovan.9836@gmail.com</span>
-        </a>
-        <a href="resume.pdf" target="_blank">
-          <img class="svg-icon" src="dl-icon.svg" />
-          <span class="baffling">Resume DL</span>
-        </a>
-      </div>
-    </footer>
-    <script src="main.js"></script>
-    <style>
-      body {
-        display: block;
-        background: #fbfcfd;
-        overflow-x: hidden;
-      }
 
-      html {
-        scroll-padding-top: 108px;
-      }
-
-      #architectural-bg {
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        opacity: 0.66;
-        pointer-events: none;
-      }
-
-      .big-ol-fist__intro,
-      .big-ol-fist__outro {
-        display: block;
-        opacity: 0.92;
-        pointer-events: none;
-        filter: drop-shadow(0 16px 28px rgba(44, 62, 80, 0.12));
-      }
-
-      .hud-nav {
-        position: fixed;
-        top: 16px;
-        left: 50%;
-        z-index: 4;
-        width: min(calc(100% - 28px), 980px);
-        transform: translateX(-50%);
-        pointer-events: none;
-      }
-
-      .hud-nav__rail {
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
-        gap: 6px;
-        padding: 7px;
-        background:
-          linear-gradient(90deg, rgba(5, 161, 178, 0.16), rgba(255, 20, 147, 0.12)),
-          rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(5, 161, 178, 0.35);
-        box-shadow:
-          0 20px 42px rgba(44, 62, 80, 0.16),
-          inset 0 0 0 1px rgba(255, 255, 255, 0.78);
-        clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
-        pointer-events: auto;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hud-nav__rail::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: repeating-linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.2) 0,
-          rgba(255, 255, 255, 0.2) 1px,
-          transparent 1px,
-          transparent 7px
-        );
-        opacity: 0.6;
-        pointer-events: none;
-      }
-
-      .hud-nav__link {
-        --hud-accent: #05a1b2;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1 1 0;
-        min-width: 0;
-        min-height: 42px;
-        gap: 8px;
-        padding: 0 15px;
-        color: #2c3e50;
-        background: rgba(255, 255, 255, 0.64);
-        border: 1px solid rgba(44, 62, 80, 0.16);
-        clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-        font-family: "Fjalla One", Arial, sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0;
-        text-transform: uppercase;
-        transition:
-          background 180ms ease,
-          border-color 180ms ease,
-          color 180ms ease,
-          transform 180ms ease,
-          box-shadow 180ms ease;
-      }
-
-      .hud-nav__link:nth-child(even) {
-        --hud-accent: deeppink;
-      }
-
-      .hud-nav__link:hover,
-      .hud-nav__link:focus-visible,
-      .hud-nav__link.is-active {
-        color: white;
-        background:
-          linear-gradient(135deg, rgba(5, 161, 178, 0.92), rgba(255, 20, 147, 0.88));
-        border-color: rgba(255, 255, 255, 0.78);
-        box-shadow:
-          0 0 0 1px rgba(255, 255, 255, 0.72),
-          0 0 24px rgba(5, 161, 178, 0.28);
-        transform: translateY(-1px);
-      }
-
-      .hud-nav__link:focus-visible {
-        outline: 3px solid rgba(255, 229, 45, 0.88);
-        outline-offset: 3px;
-      }
-
-      .hud-nav__code {
-        display: inline-grid;
-        place-items: center;
-        width: 26px;
-        height: 22px;
-        color: var(--hud-accent);
-        background: rgba(44, 62, 80, 0.08);
-        border: 1px solid currentColor;
-        font-family: monospace;
-        font-size: 12px;
-        line-height: 1;
-      }
-
-      .hud-nav__link:hover .hud-nav__code,
-      .hud-nav__link:focus-visible .hud-nav__code,
-      .hud-nav__link.is-active .hud-nav__code {
-        color: #ffe52d;
-        background: rgba(0, 0, 0, 0.24);
-      }
-
-      .intro,
-      .content,
-      .footer {
-        position: relative;
-        z-index: 1;
-      }
-
-      .intro {
-        min-height: 96vh;
-        margin: 0 0 80px;
-        padding-top: 120px;
-      }
-
-      .intro .name {
-        text-shadow: 0 12px 32px rgba(251, 252, 253, 0.9);
-      }
-
-      .intro-blurb {
-        background: transparent;
-      }
-
-      #home,
-      #things,
-      #skills,
-      #experience,
-      #projects,
-      #contact {
-        scroll-margin-top: 112px;
-      }
-
-      @media (max-width: 980px) {
-        .hud-nav {
-          width: min(calc(100% - 20px), 760px);
-        }
-
-        .hud-nav__rail {
-          gap: 5px;
-          padding: 6px;
-        }
-
-        .hud-nav__link {
-          min-height: 40px;
-          gap: 6px;
-          padding: 0 10px;
-          font-size: 12px;
-        }
-
-        .hud-nav__code {
-          width: 23px;
-          height: 20px;
-          font-size: 11px;
-        }
-      }
-
-      @media (max-width: 720px) {
-        html {
-          scroll-padding-top: 24px;
-        }
-
-        body {
-          padding-bottom: 112px;
-        }
-
-        .hud-nav {
-          top: auto;
-          bottom: 10px;
-          width: calc(100% - 16px);
-        }
-
-        .hud-nav__rail {
-          display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          justify-content: stretch;
-          gap: 5px;
-          padding: 7px;
-          clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
-        }
-
-        .hud-nav__link {
-          width: 100%;
-          min-height: 42px;
-          gap: 5px;
-          padding: 0 6px;
-          font-size: 11px;
-          white-space: nowrap;
-        }
-
-        .hud-nav__code {
-          width: 22px;
-          height: 19px;
-          font-size: 10px;
-        }
-
-        .intro {
-          min-height: 92vh;
-          padding-top: 70px;
-        }
-
-        .content {
-          width: 100%;
-        }
-
-        #home,
-        #things,
-        #skills,
-        #experience,
-        #projects,
-        #contact {
-          scroll-margin-top: 24px;
-        }
-      }
-
-      @media (max-width: 380px) {
-        .hud-nav__rail {
-          gap: 4px;
-          padding: 6px;
-        }
-
-        .hud-nav__link {
-          flex-direction: column;
-          min-height: 48px;
-          gap: 3px;
-          font-size: 10px;
-        }
-      }
-    </style>
-    <script type="module" src="architectural-background.js"></script>
-    <script src="hud-navigation.js"></script>
+    <script src="px-app.js?v=biome20" defer></script>
   </body>
 </html>
