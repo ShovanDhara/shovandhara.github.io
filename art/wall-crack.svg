@@ -1,0 +1,16 @@
+<!-- A branching fissure with a faint lit lip along one side, so the wall reads
+     as damaged rather than merely textured. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="440">
+  <g stroke="#0c0a11" fill="none" stroke-linecap="round" opacity="0.72">
+    <path d="M196 0 L184 44 L200 78 L182 124 L192 168 L174 212 L184 254 L170 300" stroke-width="3" />
+    <path d="M184 44 L154 62" stroke-width="2" />
+    <path d="M182 124 L214 148" stroke-width="2" />
+    <path d="M192 168 L160 188" stroke-width="2" />
+    <path d="M174 212 L206 238" stroke-width="1.5" />
+    <path d="M184 254 L214 268" stroke-width="1.5" />
+  </g>
+
+  <g stroke="#f2e8d5" fill="none" opacity="0.05" stroke-width="1">
+    <path d="M199 0 L187 44 L203 78 L185 124 L195 168 L177 212 L187 254 L173 300" />
+  </g>
+</svg>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hey, it's me! Shovan Dhara!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Knewave"
+      rel="stylesheet"
+    />
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-123012336-1");
+    </script>
+    <style>
+      body {
+        display: none;
+      }
+      .first-name {
+        padding-right: 2rem;
+      }
+      .intro-blurb-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        font-family: "Times New Roman", Times, serif;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+        font-style: italic;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .intro-blurb-title:hover {
+        color: #24bbcc;
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="hud-nav" aria-label="Portfolio sections">
+      <div class="hud-nav__rail">
+        <a class="hud-nav__link is-active" href="#home" data-nav-link>
+          <span class="hud-nav__code">00</span>
+          <span>Home</span>
+        </a>
+        <a class="hud-nav__link" href="#things" data-nav-link>
+          <span class="hud-nav__code">01</span>
+          <span>Loadout</span>
+        </a>
+        <a class="hud-nav__link" href="#skills" data-nav-link>
+          <span class="hud-nav__code">02</span>
+          <span>Skills</span>
+        </a>
+        <a class="hud-nav__link" href="#experience" data-nav-link>
+          <span class="hud-nav__code">03</span>
+          <span>XP</span>
+        </a>
+        <a class="hud-nav__link" href="#projects" data-nav-link>
+          <span class="hud-nav__code">04</span>
+          <span>Builds</span>
+        </a>
+        <a class="hud-nav__link" href="#contact" data-nav-link>
+          <span class="hud-nav__code">05</span>
+          <span>Comms</span>
+        </a>
+      </div>
+    </nav>
+    <canvas id="architectural-bg" aria-hidden="true"></canvas>
+    <div class="big-ol-fist__intro" style="z-index: 1"></div>
+    <div class="intro" id="home">
+      <div
+        class="name"
+        title="Thanks for vibin' and keepin' it tight. If you need me, I'm on my mobile."
+      >
+        <div class="baffling first-name">Hi</div>
+        <div class="baffling first-name">It's</div>
+        <div class="baffling last-name">SHOVAN</div>
+      </div>
+      <br />
+      <div class="contact" style="z-index: 2">
+        <a href="https://github.com/shovanDhara">
+          <img class="svg-icon" src="gh-icon.svg" />
+          <span class="baffling">shovanDhara</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shovan-dhara/">
+          <img class="svg-icon" src="linkedin-icon.svg" />
+          <span class="baffling">Shovan Dhara</span>
+        </a>
+        <a href="mailto:shovan.9836@gmail.com">
+          <img class="svg-icon" src="email-icon.svg" />
+          <span class="baffling">shovan.9836@gmail.com</span>
+        </a>
+        <a href="../resume.pdf" target="_blank">
+          <img class="svg-icon" src="dl-icon.svg" />
+          <span class="baffling">Resume DL</span>
+        </a>
+      </div>
+      <div class="intro-blurb">
+        <section>
+          Frontend Architecture SME with 11+ years of experience leading
+          technical strategy and high-level design for high-performance,
+          large-scale web applications. Provides UI leadership for P1
+          initiatives by translating complex requirements into scalable,
+          user-centric experiences. Architects resilient Micro Frontend
+          ecosystems using JavaScript, TypeScript, and modern frameworks
+          including React, Angular, and Vue, enabling faster delivery through
+          build-once–deploy-anywhere strategies and shared libraries. Brings
+          strong backend and data-layer expertise using Node.js, MongoDB,
+          GraphQL, and Prisma to design cohesive end-to-end systems. Drives
+          innovation through POCs, boosts developer productivity by 50%, and
+          ensures system quality through cross-functional collaboration and
+          architectural leadership.
+        </section>
+        <section class="intro-blurb-title">
+          “If I had an hour to solve a problem and my life depended on the
+          solution, I would spend the first 55 minutes determining the proper
+          question to ask, for once I know the proper question, I could solve
+          the problem in less than five minutes.” — Albert Einstein, Theoretical
+          Physicist.
+        </section>
+      </div>
+    </div>
+    <div class="content">
+      <section class="things-i-bring-section" id="things">
+        <h1 class="baffling">Here are a few of the things I bring</h1>
+        <div class="things-i-bring-grid">
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="love-art.png" /></div>
+            <h2 class="thing-i-bring-title">
+              Your Frontend Ally and DOM Diplomat
+            </h2>
+            <p class="thing-i-bring-blurb">
+              Bridging design and development, I champion frontend excellence
+              with a deep understanding of the DOM and user experience.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="modernjs-art.png" /></div>
+            <h2 class="thing-i-bring-title">JavaScript, TypeScript & Beyond</h2>
+            <p class="thing-i-bring-blurb">
+              Always exploring the cutting edge—modern JavaScript, TypeScript,
+              powerful frameworks, and robust tooling are my daily tools of
+              choice.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="cleanui-art.png" /></div>
+            <h2 class="thing-i-bring-title">Built on Best Practices</h2>
+            <p class="thing-i-bring-blurb">
+              I don’t just build—I document, refine, and scale using proven
+              architectural patterns and frontend principles.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art">
+              <img src="ideatoimpl-art.png" />
+            </div>
+            <h2 class="thing-i-bring-title">End-to-End Ownership</h2>
+            <p class="thing-i-bring-blurb">
+              From behavior-driven UX to system planning, from code
+              implementation to seamless delivery—I loop back, always improving.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art">
+              <img src="initiative-art.png" />
+            </div>
+            <h2 class="thing-i-bring-title">UI Obsessed, Problem Focused</h2>
+            <p class="thing-i-bring-blurb">
+              A passion for clean, functional UI pushes me to identify pain
+              points, take ownership, and deliver elegant solutions.
+            </p>
+          </div>
+          <div class="thing-i-bring">
+            <div class="thing-i-bring-art"><img src="crossteam-art.png" /></div>
+            <h2 class="thing-i-bring-title">No Great Idea Left Behind</h2>
+            <p class="thing-i-bring-blurb">
+              I believe even unconventional ideas deserve a shot—let’s elevate
+              the overlooked into the extraordinary.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="some-skills-section" id="skills">
+        <h1 class="baffling">These are *some* of my skills</h1>
+        <div class="some-skills">
+          <div class="some-skills-column">
+            <div class="some-skills-block">
+              <h2 class="some-skills-block-title">Technical</h2>
+              <ul class="some-skills-block-list">
+                <li>Modern JavaScript, Typescript, CSS, and HTML</li>
+                <li>Web Browser APIs, dev tools, and perf profiling</li>
+                <li>
+                  Component-based, state-driven, declarative UI frameworks (
+                  React, NEXT Js, React Query, Redux, Single SPA)
+                </li>
+                <li>Webpack, babel, eslint</li>
+                <li>Testing Tools - Cypress, Jest, React Testing Library</li>
+                <li>Architecture – Monolithic, Micro Front-End</li>
+                <li>Backend – Node JS, Python(Basic)</li>
+                <li>DB – Mongo DB, PostgreSQL</li>
+                <li>Query Language – GraphQL</li>
+                <li>
+                  Security Integration - Sub-resource Integrity, Content
+                  Security Policy in CloudFront CDN
+                </li>
+                <li>
+                  Infra – AWS S3, CloudFront, Helm Chart, Makefile, Jenkins,
+                  Nginx Config and Debugging, K8s, Docker
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="some-skills-column">
+            <img width="100%" src="skills-art-placeholder.png" />
+          </div>
+          <div class="some-skills-column">
+            <div class="some-skills-block">
+              <h2 class="some-skills-block-title">
+                Planning and Collaboration
+              </h2>
+              <ul class="some-skills-block-list">
+                <li>Collaboration across product, design, and engineering</li>
+                <li>User-centered design thinking</li>
+                <li>Planning for incremental delivery (Agile/Scrum)</li>
+                <li>Rapid prototyping and communication with wireframes</li>
+              </ul>
+            </div>
+            <div class="some-skills-block">
+              <h2 class="some-skills-block-title">AI & Automation</h2>
+              <ul class="some-skills-block-list">
+                <li>
+                  Built Schematics (Created CLI Tools to simplify and enhance
+                  the DX)
+                </li>
+                <li>
+                  AI-assisted development using Cursor IDE and Cursor MCP for
+                  accelerated coding and refactoring
+                </li>
+                <li>
+                  Building AI-powered features using Vercel AI SDK and OpenAI
+                  APIs
+                </li>
+                <li>
+                  Integrating LLMs into frontend workflows for intelligent UX
+                  and automation
+                </li>
+                <li>Rapid prototyping of AI-driven Proofs of Concept (POCs)</li>
+                <li>
+                  Evaluating AI use-cases for product impact and system
+                  feasibility
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience">
+        <h1 class="baffling">This is my work experience</h1>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Josys</div>
+            <br />
+            <div class="experience-block-place-role">UI Tech Lead</div>
+            <div class="experience-block-place-time">Dec 2022 - Present</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Product Enhancement Leadership: Led a talented team in
+              transforming user experiences and improving product performance at
+              Josys by driving forward-thinking UI/UX enhancements.
+            </li>
+            <li>
+              UI Development Mastery: Leveraged React.js proficiency to craft
+              innovative UI libraries and Design Systems, accelerating component
+              development and ensuring consistent, scalable interfaces across
+              our products.
+            </li>
+            <li>
+              Code Optimization & Innovation: Spearheaded code optimizations,
+              Micro Frontend integration, and i18n strategies, instrumental in
+              successful global product launches and bolstering our technical
+              foundation.
+            </li>
+            <li>
+              Efficiency & Automation: Implemented automation in the release
+              process, streamlining operations for faster iterations and
+              impeccable product deliveries, contributing directly to increased
+              operational efficiency.
+            </li>
+            <li>
+              Measurable Impact: These efforts directly correlated with tangible
+              outcomes, significantly elevating product sales and reinforcing
+              our position in the market, fostering company growth.
+            </li>
+            <li>
+              Daily involvement with a whole host of AWS services like
+              CloudFront, S3, EC2, Cloudwatch, and many
+              others
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Cisco</div>
+            <br />
+            <div class="experience-block-place-role">Software Engineer L10</div>
+            <div class="experience-block-place-time">June 2022 - Nov 2022</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Working as a senior member of the technical team of Cisco SDWAN
+              vManage Application.
+            </li>
+            <li>Working extensively using React with Redux.</li>
+            <li>Mentoring and onboarding newcomers for vManage app.</li>
+            <li>
+              Suggesting process improvement, best practices across teams.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">Infoblox</div>
+            <br />
+            <div class="experience-block-place-role">
+              Senior Software Engineer
+            </div>
+            <div class="experience-block-place-time">Oct 2021 - May 2022</div>
+            <br />
+            <div class="experience-block-place-role">Software Engineer 2</div>
+            <div class="experience-block-place-time">
+              April 2020 - Sept 2021
+            </div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Worked as module owner for On-prem in BloxOne product and was
+              responsible for tasks like feature addition, unit testing,
+              improvement etc. Responsible for taking critical decision for UI
+              related implementations and UX reviews. Helped Infoblox to build a
+              strong UI team in Bengaluru for B1DDI platform by interviewing
+              engineers both from India and US.
+            </li>
+            <li>
+              Engaged on migrating large monolithic browser application (Blox
+              One DDI) to Micro front-end architecture without breaking current
+              user experience. The architecture lets developers do individual
+              development and deployment across teams from different time zone.
+            </li>
+            <li>
+              Worked closely with back end engineers to design (and frequently
+              implemented) GraphQL schemas which properly model the domain and
+              providing maximum flexibility for queries
+            </li>
+            <li>
+              Worked on content sharing platform like AWS Cloudfront, S3,
+              implemented security improvement for CDN network with the help of
+              Subresource Integrity, Content Security Policy for Cloudfront etc.
+            </li>
+            <li>
+              Created Schematics specifically for the platform that enable
+              developers to convert angular app into micro front-end with a
+              single command.
+            </li>
+            <li>
+              Engaged on creating and maintaining angular libraries which used
+              by other teams for day to day purpose. Also published and
+              maintained library versioning system.
+            </li>
+            <li>
+              Worked on other aspect of deployment stuff like Jenkins, Helm
+              Chart , Kubernetes, AWS, Spninnaker, Docker etc. Created Jenkins
+              file and Makefile configurations. Played a role of SME in UI
+              Architecture.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">
+              Cognizant Technology Solutions
+            </div>
+            <br />
+            <div class="experience-block-place-role">
+              Associate Software Engineer
+            </div>
+            <div class="experience-block-place-time">Dec 2016 - Jan 2020</div>
+            <br />
+            <div class="experience-block-place-role">Programmer Analyst</div>
+            <div class="experience-block-place-time">Aug 2014 - Nov 2016</div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Designed and developed scalable, modular front-end architectures
+              using Angular, React, and Material frameworks for building
+              responsive Single Page Applications.
+            </li>
+            <li>
+              Built enterprise-grade applications and POCs using React, Redux,
+              Flask (Python), MongoDB, and Node.js (Express), covering all
+              stages of the product lifecycle in Agile and Waterfall models.
+            </li>
+            <li>
+              Collaborated with design teams to recommend user-friendly
+              interfaces, emphasizing clean, efficient, and accessible UX
+              patterns.
+            </li>
+            <li>
+              Proficient in Webpack, NPM, Grunt, and modern version control
+              tools (Git, TFS, VSTS) to streamline development workflows and
+              ensure quality delivery.
+            </li>
+            <li>
+              Recognized in multiple hackathons; proactive in adopting new
+              technologies and patterns, with a passion for continuous
+              improvement and innovation.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="projects-section" id="projects">
+        <h1 class="baffling">Take a look at selected projects</h1>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">
+              Josys In-House Design System
+            </div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Developed and maintained a scalable, reusable component library
+              using React and TypeScript, enabling seamless integration across
+              multiple micro frontends. Ensured consistency in UI/UX through
+              modular architecture, strict typing, and adherence to Josys's
+              design tokens and accessibility standards.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">
+              Micro-Frontend for BloxOne Platform
+            </div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Monolithic to Micro front-end migration - Architected, developed,
+              lead a team, and deployed a micro front end loading platform for
+              an existing monolithic UI application. Aside from developing the
+              browser application, this included a large amount of deployment
+              work involving AWS, Jenkins, spinnaker, helm, and Kubernetes.
+            </li>
+          </ul>
+        </div>
+        <div class="experience-block">
+          <div class="experience-block-place">
+            <div class="experience-block-place-title">
+              Custom Angular Schematics Library
+            </div>
+          </div>
+          <ul class="experience-block-experience-list">
+            <li>
+              Developed a custom Schematics Library for converting basic angular
+              boilerplate to a Micro Front-end boilerplate which makes 107
+              individual changes in several files. This library was focused to
+              ease the job of the developer who wants to onboard a new MFE
+              application in the Infoblox SAAS Enterprise platform.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer class="footer" id="contact">
+      <p>Thanks y'all. ☕</p>
+      <h1 class="my-name">SHOVAN DHARA</h1>
+      <div class="big-ol-fist__outro"></div>
+      <div class="contact" style="position: relative">
+        <a href="https://github.com/shovanDhara">
+          <img class="svg-icon" src="gh-icon.svg" />
+          <span class="baffling">shovanDhara</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shovan-dhara/">
+          <img class="svg-icon" src="linkedin-icon.svg" />
+          <span class="baffling">Shovan Dhara</span>
+        </a>
+        <a href="mailto:shovan.9836@gmail.com">
+          <img class="svg-icon" src="email-icon.svg" />
+          <span class="baffling">shovan.9836@gmail.com</span>
+        </a>
+        <a href="../resume.pdf" target="_blank">
+          <img class="svg-icon" src="dl-icon.svg" />
+          <span class="baffling">Resume DL</span>
+        </a>
+      </div>
+    </footer>
+    <script src="main.js"></script>
+    <style>
+      body {
+        display: block;
+        background: #fbfcfd;
+        overflow-x: hidden;
+      }
+
+      html {
+        scroll-padding-top: 108px;
+      }
+
+      #architectural-bg {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.66;
+        pointer-events: none;
+      }
+
+      .big-ol-fist__intro,
+      .big-ol-fist__outro {
+        display: block;
+        opacity: 0.92;
+        pointer-events: none;
+        filter: drop-shadow(0 16px 28px rgba(44, 62, 80, 0.12));
+      }
+
+      .hud-nav {
+        position: fixed;
+        top: 16px;
+        left: 50%;
+        z-index: 4;
+        width: min(calc(100% - 28px), 980px);
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      .hud-nav__rail {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        gap: 6px;
+        padding: 7px;
+        background:
+          linear-gradient(90deg, rgba(5, 161, 178, 0.16), rgba(255, 20, 147, 0.12)),
+          rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(5, 161, 178, 0.35);
+        box-shadow:
+          0 20px 42px rgba(44, 62, 80, 0.16),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.78);
+        clip-path: polygon(18px 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+        pointer-events: auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hud-nav__rail::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.2) 0,
+          rgba(255, 255, 255, 0.2) 1px,
+          transparent 1px,
+          transparent 7px
+        );
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      .hud-nav__link {
+        --hud-accent: #05a1b2;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0;
+        min-width: 0;
+        min-height: 42px;
+        gap: 8px;
+        padding: 0 15px;
+        color: #2c3e50;
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(44, 62, 80, 0.16);
+        clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        font-family: "Fjalla One", Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease,
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .hud-nav__link:nth-child(even) {
+        --hud-accent: deeppink;
+      }
+
+      .hud-nav__link:hover,
+      .hud-nav__link:focus-visible,
+      .hud-nav__link.is-active {
+        color: white;
+        background:
+          linear-gradient(135deg, rgba(5, 161, 178, 0.92), rgba(255, 20, 147, 0.88));
+        border-color: rgba(255, 255, 255, 0.78);
+        box-shadow:
+          0 0 0 1px rgba(255, 255, 255, 0.72),
+          0 0 24px rgba(5, 161, 178, 0.28);
+        transform: translateY(-1px);
+      }
+
+      .hud-nav__link:focus-visible {
+        outline: 3px solid rgba(255, 229, 45, 0.88);
+        outline-offset: 3px;
+      }
+
+      .hud-nav__code {
+        display: inline-grid;
+        place-items: center;
+        width: 26px;
+        height: 22px;
+        color: var(--hud-accent);
+        background: rgba(44, 62, 80, 0.08);
+        border: 1px solid currentColor;
+        font-family: monospace;
+        font-size: 12px;
+        line-height: 1;
+      }
+
+      .hud-nav__link:hover .hud-nav__code,
+      .hud-nav__link:focus-visible .hud-nav__code,
+      .hud-nav__link.is-active .hud-nav__code {
+        color: #ffe52d;
+        background: rgba(0, 0, 0, 0.24);
+      }
+
+      .intro,
+      .content,
+      .footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      .intro {
+        min-height: 96vh;
+        margin: 0 0 80px;
+        padding-top: 120px;
+      }
+
+      .intro .name {
+        text-shadow: 0 12px 32px rgba(251, 252, 253, 0.9);
+      }
+
+      .intro-blurb {
+        background: transparent;
+      }
+
+      #home,
+      #things,
+      #skills,
+      #experience,
+      #projects,
+      #contact {
+        scroll-margin-top: 112px;
+      }
+
+      @media (max-width: 980px) {
+        .hud-nav {
+          width: min(calc(100% - 20px), 760px);
+        }
+
+        .hud-nav__rail {
+          gap: 5px;
+          padding: 6px;
+        }
+
+        .hud-nav__link {
+          min-height: 40px;
+          gap: 6px;
+          padding: 0 10px;
+          font-size: 12px;
+        }
+
+        .hud-nav__code {
+          width: 23px;
+          height: 20px;
+          font-size: 11px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html {
+          scroll-padding-top: 24px;
+        }
+
+        body {
+          padding-bottom: 112px;
+        }
+
+        .hud-nav {
+          top: auto;
+          bottom: 10px;
+          width: calc(100% - 16px);
+        }
+
+        .hud-nav__rail {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          justify-content: stretch;
+          gap: 5px;
+          padding: 7px;
+          clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+        }
+
+        .hud-nav__link {
+          width: 100%;
+          min-height: 42px;
+          gap: 5px;
+          padding: 0 6px;
+          font-size: 11px;
+          white-space: nowrap;
+        }
+
+        .hud-nav__code {
+          width: 22px;
+          height: 19px;
+          font-size: 10px;
+        }
+
+        .intro {
+          min-height: 92vh;
+          padding-top: 70px;
+        }
+
+        .content {
+          width: 100%;
+        }
+
+        #home,
+        #things,
+        #skills,
+        #experience,
+        #projects,
+        #contact {
+          scroll-margin-top: 24px;
+        }
+      }
+
+      @media (max-width: 380px) {
+        .hud-nav__rail {
+          gap: 4px;
+          padding: 6px;
+        }
+
+        .hud-nav__link {
+          flex-direction: column;
+          min-height: 48px;
+          gap: 3px;
+          font-size: 10px;
+        }
+      }
+    </style>
+    <script type="module" src="architectural-background.js"></script>
+    <script src="hud-navigation.js"></script>
+  </body>
+</html>

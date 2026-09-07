@@ -1,0 +1,29 @@
+<!-- Running-bond masonry tile. Two courses offset by half a block, each with a
+     lit top edge and a shadowed bottom edge so the stone reads as carved. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="52">
+  <rect width="152" height="52" fill="#1a1620" />
+
+  <g>
+    <rect x="0" y="1" width="73" height="23" fill="#3b3543" />
+    <rect x="76" y="1" width="73" height="23" fill="#423b4b" />
+    <rect x="-38" y="27" width="73" height="23" fill="#453e4e" />
+    <rect x="38" y="27" width="73" height="23" fill="#38323e" />
+    <rect x="114" y="27" width="73" height="23" fill="#3f3846" />
+  </g>
+
+  <g fill="#ffffff" opacity="0.06">
+    <rect x="0" y="1" width="73" height="2" />
+    <rect x="76" y="1" width="73" height="2" />
+    <rect x="-38" y="27" width="73" height="2" />
+    <rect x="38" y="27" width="73" height="2" />
+    <rect x="114" y="27" width="73" height="2" />
+  </g>
+
+  <g fill="#000000" opacity="0.3">
+    <rect x="0" y="22" width="73" height="2" />
+    <rect x="76" y="22" width="73" height="2" />
+    <rect x="-38" y="48" width="73" height="2" />
+    <rect x="38" y="48" width="73" height="2" />
+    <rect x="114" y="48" width="73" height="2" />
+  </g>
+</svg>
